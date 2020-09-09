@@ -67,7 +67,7 @@ void Sort::select(int sortAlgo){
 			currentAlgo = "Merge";
 			break;
 		case INSERTION:
-			//sortPointer = &Insertion::insertionSort;
+			sortPointer = &Insertion::insertionSort;
 			currentAlgo = "Insertion";
 			break;
 		default:

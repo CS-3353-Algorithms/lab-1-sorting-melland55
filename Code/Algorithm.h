@@ -10,8 +10,8 @@ class Algorithm
     	//Creates an enum with every type of sorting algorithm
     	enum SortingAlgo{
         	BUBBLE = 0,
-        	MERGE,
         	INSERTION,
+        	MERGE,
         	END
 		};
     	

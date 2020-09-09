@@ -28,7 +28,7 @@ class Sort : public Algorithm
     	//Name of algorithm using
     	string currentAlgo;
         //Used to time the sort functions
-    	chrono::duration<double, milli> time;
+    	chrono::duration<float, milli> time;
     	//Pointer that can point to any of the sorting functions
     	void (*sortPointer)(vector<int> &vect);
 };

@@ -35,13 +35,14 @@ void Sort::load(string filePath){
 //Executes the selected sorting algorithm
 void Sort::execute(){
     //Stores starting time
-	auto timePointOne = chrono::high_resolution_clock::now();
+	auto start = chrono::high_resolution_clock::now();
 	//Calls the sort from a function pointer
 	(*sortPointer)(*vect);
 	//Stores ending time
-	auto timePointTwo = chrono::high_resolution_clock::now();
+	auto end = chrono::high_resolution_clock::now();
 	//Find the overall time of the sorting function
-	time = timePointTwo - timePointOne;
+    std::chrono::duration<double> diff = end-start;
+    time = diff;
 }
 
 //Prints solution to the screen
@@ -60,10 +61,9 @@ void Sort::stats(){
 
 //Selects the specified sorting Algorithm
 void Sort::select(int sortAlgo){
-	//Sets the function pointer to the correct function and sets currentAlgo for use in stats
 	switch(sortAlgo){
 		case MERGE:
-			//sortPointer = &Merge::mergeSort;
+			sortPointer = &Merge::mergeSort;
 			currentAlgo = "Merge";
 			break;
 		case INSERTION:

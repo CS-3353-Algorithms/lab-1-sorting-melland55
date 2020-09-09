@@ -29,7 +29,6 @@ void Sort::load(string filePath){
 		ifs >> temp;
 		vect->push_back(temp);
 	}
-	//closes the file
 	ifs.close();
 }
 
@@ -48,8 +47,8 @@ void Sort::execute(){
 //Prints solution to the screen
 void Sort::display(){
 	//Prints each value in the sorted vector
-	for(int k = 0; k < vect->size() - 1; k++){
-		cout << vect->at(k) << ", ";
+	for(int i = 0; i < vect->size() - 1; i++){
+		cout << vect->at(i) << ", ";
 	}
     cout << vect->at(vect->size() - 1) << endl;
 }
@@ -72,7 +71,7 @@ void Sort::select(int sortAlgo){
 			currentAlgo = "Insertion";
 			break;
 		default:
-			//sortPointer = &Bubble::bubbleSort;
+			sortPointer = &Bubble::bubbleSort;
 			currentAlgo = "Bubble";
 			break;
 	}
@@ -82,10 +81,11 @@ void Sort::select(int sortAlgo){
 void Sort::save(string filePath){
 	ofstream of;
 	of.open(filePath);
-	//Writes each element in the resulting sorted vector onto the file
-	for(int k = 0; k < vect->size();k++){
-		of << vect->at(k) << endl;
+	//Writes each element in the sorted vector onto the sorted file
+	for(int i = 0; i < vect->size() - 1; i++){
+		of << vect->at(i) << endl;
 	}
+	of << vect->at(vect->size() - 1);
 }
 
 void Sort::configure(){

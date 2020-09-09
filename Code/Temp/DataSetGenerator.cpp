@@ -12,11 +12,11 @@ int main(int argc, char* argv[]){
     string fileName = "";
     srand(time(0));
 	
-	for(int k = 0;k < 4;k++){
-		int dataSize = dataSizes[k];
+	for(int i = 0; i < 4; i++){
+		int dataSize = dataSizes[i];
 		fileName = "../Data/" + to_string(dataSize) + " Random Numbers.txt";
 		of.open(fileName);
-        for(int j = 0;j < dataSize - 1;j++){
+        for(int j = 0; j < dataSize - 1; j++){
         	of << rand() % dataSize << endl;
 		}
 		of << rand() % dataSize;
@@ -25,7 +25,7 @@ int main(int argc, char* argv[]){
 
 		fileName = "../Data/" + to_string(dataSize) + " Reversed Sorted Numbers.txt";
 		of.open(fileName);
-        for(int j = dataSize - 1;j > 0;j--){
+        for(int j = dataSize - 1; j > 0; j--){
         	of << j << endl;
 		}
 		of << 0;
@@ -52,7 +52,7 @@ int main(int argc, char* argv[]){
 
 		fileName = "../Data/" + to_string(dataSize) + " 30 Percent Randomized Numbers.txt";
 		of.open(fileName);
-        for(int j = 0;j < dataSize - 1;j++){
+        for(int j = 0; j < dataSize - 1; j++){
         	if((j % 3) == 0){
 				of << rand() % dataSize << endl;
 			} else {

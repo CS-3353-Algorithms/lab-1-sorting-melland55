@@ -21,14 +21,14 @@ class Sort : public Algorithm
         void select(int);
         void save(string);
         void configure();
-    
+
     private:
     	//Stores values of files into vector
     	vector<int>* vect;
     	//Name of algorithm using
     	string currentAlgo;
         //Used to time the sort functions
-    	chrono::duration<float, milli> time;
+    	chrono::duration<double, milli> time;
     	//Pointer that can point to any of the sorting functions
     	void (*sortPointer)(vector<int> &vect);
 };

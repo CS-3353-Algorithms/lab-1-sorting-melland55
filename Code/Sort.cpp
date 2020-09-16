@@ -41,8 +41,7 @@ void Sort::execute(){
 	//Stores ending time
 	auto end = chrono::high_resolution_clock::now();
 	//Find the overall time of the sorting function
-    std::chrono::duration<double> diff = end-start;
-    time = diff;
+    time = end-start;
 }
 
 //Prints solution to the screen
